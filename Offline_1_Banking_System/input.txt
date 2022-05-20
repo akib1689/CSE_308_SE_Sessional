@@ -1,0 +1,19 @@
+create alice student 1000
+deposit 2000
+withdraw 12000
+query
+request 500
+close
+open o 1
+approve
+change student 7.6
+lookup alice
+see
+close
+open alice
+query
+close
+inc
+open alice
+query
+close
