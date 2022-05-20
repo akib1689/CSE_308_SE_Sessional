@@ -139,6 +139,7 @@ public class Bank {
         for (Customer c : customers) {
             c.getAccount().addInterest();
         }
+        System.out.println("1 year passed!");
     }
 
     public void loginAsOfficer(int index) {
@@ -175,6 +176,7 @@ public class Bank {
 
     public void logout(){
         loggedIn = null;
+        System.out.println("Session closed!");
     }
 
 

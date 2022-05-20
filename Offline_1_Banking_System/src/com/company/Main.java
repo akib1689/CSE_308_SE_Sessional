@@ -20,6 +20,7 @@ public class Main {
             String line;
             while ((line = reader.readLine()) != null){
                 String[] inputs = line.split(" ");
+                System.out.print(line+ "--");
                 switch (inputs[0].toLowerCase()){
                     case "create":
                         bank.createAccount(inputs[1], AccountType.valueOf(inputs[2].toUpperCase()), Double.parseDouble(inputs[3]));

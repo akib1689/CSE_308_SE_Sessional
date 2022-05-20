@@ -1,10 +1,10 @@
-create alice student 1000
-deposit 2000
+create alice student 10000
+deposit 20000
 withdraw 12000
 query
 request 500
 close
-open o 1
+open o 5
 approve
 change student 7.6
 lookup alice

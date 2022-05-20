@@ -61,12 +61,13 @@ public class Customer extends BaseUser{
     public void requestLoan(double amount){
         if (account.requestLoan(amount)){
             System.out.println("Success! Requested loan successfully. Sent for approval.");
+            return;
         }
         System.out.println("Error! could not request loan of this amount");
     }
 
     public void checkBalance(){
-        System.out.println("Current balance: " + account.getAmount() + "$.");
+        System.out.println("Current balance: " + account.getAmount() + " $.");
     }
 
     public String getName(){
