@@ -60,9 +60,9 @@ public class StudentAccount extends Account {
 
     //todo
     @Override
-    public boolean approveLoan() {
+    public double approveLoan() {
         if (this.loan == null){
-            return false;
+            return 0;
         }
         return loan.approveLoan();
     }

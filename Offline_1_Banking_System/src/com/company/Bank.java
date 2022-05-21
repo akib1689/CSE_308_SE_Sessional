@@ -116,7 +116,7 @@ public class Bank {
             System.out.println("You Don't Have the permission for this operation");
             return;
         }
-        ((Officer) loggedIn).approveLoan(getAccounts());
+        internalFund -= ((Officer) loggedIn).approveLoan(getAccounts());
     }
 
     public void changeInterest(AccountType type, double newRate) {
@@ -134,7 +134,7 @@ public class Bank {
             return;
         }
 
-        ((ManagingDirector) loggedIn).seeFund(getAccounts());
+        ((ManagingDirector) loggedIn).seeFund(internalFund);
     }
 
     public void incrementYear() {

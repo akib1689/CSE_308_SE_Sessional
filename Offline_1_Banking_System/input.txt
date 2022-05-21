@@ -1,5 +1,4 @@
-create alice student 1000
-deposit 20000
+create alice loan 1000
 withdraw 12000
 query
 request 500

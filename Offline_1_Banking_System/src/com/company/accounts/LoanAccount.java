@@ -1,10 +1,10 @@
 package com.company.accounts;
 
 public class LoanAccount extends Account{
-    private boolean approved;
+    private double pending;
     public LoanAccount(String owner, double amount) {
-        super(owner, amount, 10, AccountType.LOAN);
-        this.approved = false;
+        super(owner, 0, 10, AccountType.LOAN);
+        this.pending = amount;
     }
 
     protected double getInterest(){
@@ -43,19 +43,20 @@ public class LoanAccount extends Account{
         if (amount > getAmount() * 1.05){
             return false;
         }
-        setAmount(getAmount() + amount);
-        approved = false;
+        pending = amount;
         return true;
     }
 
 
     @Override
-    public boolean approveLoan() {
-        if (!approved) {
-            this.approved = true;
-            return true;
+    public double approveLoan() {
+        double val = pending;
+        if (pending > 0) {
+            setAmount(getAmount() + pending);
+            pending = 0;
+            return val;
         }
 
-        return false;
+        return 0;
     }
 }

@@ -50,7 +50,7 @@ public abstract class Account {
 
     public abstract boolean requestLoan(double amount);
 
-    public abstract boolean approveLoan();
+    public abstract double approveLoan();
 
     //public abstract double loanAmount();
 
