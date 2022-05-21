@@ -10,7 +10,7 @@ An in-depth paragraph about your project and overview of use.
 
 ### Offline 1
 
-In this assignment, you will implement a simple banking system using the basic concepts of Object Oriented Programming. [Question is here.](Offline_1_ques\Offline1.pdf)
+In this assignment, you will implement a simple banking system using the basic concepts of Object Oriented Programming. [Question is here.](akib-89/CSE_308_SE_Sessional/blob/master/Offline_1_ques/Offline1.pdf)
 
 ## Authors
 
