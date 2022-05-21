@@ -2,7 +2,7 @@ package com.company.accounts;
 
 /**
  * composite structure this is the base interface all clients will access the accounts via this classes
- * */
+ */
 public abstract class Account {
     private final String owner;     // In real world it might be another class
     private double amount;
@@ -13,7 +13,7 @@ public abstract class Account {
     public Account(String owner, double amount, double rate, AccountType type) {
         this.owner = owner;
         this.amount = amount;
-        this.rate = rate/100;
+        this.rate = rate / 100;
         this.type = type;
     }
 
@@ -25,15 +25,12 @@ public abstract class Account {
         return type;
     }
 
-    public void setRate(double newRate){
-        this.rate = newRate/100;
+    public void setRate(double newRate) {
+        this.rate = newRate / 100;
     }
 
-    public void addInterest(){
-        amount += (amount*rate);
-    }
 
-    public void setAmount(double amount) {
+    protected void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -44,6 +41,8 @@ public abstract class Account {
     public double getAmount() {
         return amount;
     }
+
+    public abstract void addInterest();
 
     public abstract boolean deposit(double amount);
 

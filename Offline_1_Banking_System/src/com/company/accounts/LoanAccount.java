@@ -11,6 +11,15 @@ public class LoanAccount extends Account{
         this.approved = approved;
     }
 
+    protected double getInterest(){
+        return getAmount() * getRate();
+    }
+
+    @Override
+    public void addInterest() {
+        setAmount(getAmount()+getAmount()*getRate());
+    }
+
     @Override
     public boolean deposit(double amount) {
         if (amount < 0){

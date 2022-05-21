@@ -5,12 +5,21 @@ public class DepositAccount extends Account {
     private LoanAccount loan;
     private int ageOfAccount;
     public DepositAccount(String owner, double amount) {
-        super(owner, amount, 8, AccountType.DEPOSIT);
+        super(owner, amount, 15, AccountType.DEPOSIT);
         this.ageOfAccount = 0;
     }
 
     public void incrementAge(){
         ageOfAccount++;
+    }
+
+    @Override
+    public void addInterest() {
+        if (loan == null){
+            setAmount(getAmount() + getAmount()*getRate());
+            return;
+        }
+        setAmount(getAmount() + getAmount()*getRate() - loan.getInterest());
     }
 
     @Override

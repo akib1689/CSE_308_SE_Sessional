@@ -5,7 +5,16 @@ public class SavingsAccount extends Account {
     private LoanAccount loan;
 
     public SavingsAccount(String owner, double amount) {
-        super(owner, amount, 5, AccountType.SAVINGS);
+        super(owner, amount, 10, AccountType.SAVINGS);
+    }
+
+    @Override
+    public void addInterest() {
+        if (loan == null){
+            setAmount(getAmount() + getAmount()*getRate());
+            return;
+        }
+        setAmount(getAmount() + getAmount()*getRate() - loan.getInterest());
     }
 
     @Override

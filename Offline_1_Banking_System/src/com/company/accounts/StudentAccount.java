@@ -4,7 +4,16 @@ package com.company.accounts;
 public class StudentAccount extends Account {
     private LoanAccount loan;
     public StudentAccount(String owner, double amount) {
-        super(owner, amount, 3.5, AccountType.STUDENT);
+        super(owner, amount, 5, AccountType.STUDENT);
+    }
+
+    @Override
+    public void addInterest() {
+        if (loan == null){
+            setAmount(getAmount() + getAmount()*getRate());
+            return;
+        }
+        setAmount(getAmount() + getAmount()*getRate() - loan.getInterest());
     }
 
     @Override
