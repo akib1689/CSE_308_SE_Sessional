@@ -41,21 +41,23 @@ public class Customer extends BaseUser{
         // account created successfully
     }
 
-    public void deposit(double amount) {
+    public double deposit(double amount) {
         if (account.deposit(amount)){
             System.out.println("Success!" + amount + "$ deposited. Current balance: " + account.getAmount());
-            return;
+            return amount;
         }
 
         System.out.println("Error! the transaction could not finished.");
+        return 0;
     }
 
-    public void withdraw(double amount){
+    public double withdraw(double amount){
         if (account.withdraw(amount)){
             System.out.println("Success!" + amount + "$ withdrawn. Current balance: " + account.getAmount());
-            return;
+            return amount;
         }
         System.out.println("Error! the transaction could not finished.");
+        return 0;
     }
 
     public void requestLoan(double amount){

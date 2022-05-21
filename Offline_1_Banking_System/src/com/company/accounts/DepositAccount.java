@@ -4,27 +4,29 @@ package com.company.accounts;
 public class DepositAccount extends Account {
     private LoanAccount loan;
     private int ageOfAccount;
+
     public DepositAccount(String owner, double amount) {
         super(owner, amount, 15, AccountType.DEPOSIT);
         this.ageOfAccount = 0;
     }
 
-    public void incrementAge(){
+    private void incrementAge() {
         ageOfAccount++;
     }
 
     @Override
     public void addInterest() {
-        if (loan == null){
-            setAmount(getAmount() + getAmount()*getRate());
+        if (loan == null) {
+            setAmount(getAmount() + getAmount() * getRate());
             return;
         }
-        setAmount(getAmount() + getAmount()*getRate() - loan.getInterest());
+        setAmount(getAmount() + getAmount() * getRate() - loan.getInterest());
+        incrementAge();
     }
 
     @Override
     public boolean deposit(double amount) {
-        if (amount < 50000){
+        if (amount < 50000) {
             return false;
         }
         // check if there is loan against the person
@@ -44,7 +46,7 @@ public class DepositAccount extends Account {
 
     @Override
     public boolean withdraw(double amount) {
-        if (ageOfAccount < 1 || amount < 0 || getAmount() - amount < 0){
+        if (ageOfAccount < 1 || amount < 0 || getAmount() - amount < 0) {
             return false;
         }
         setAmount(getAmount() - amount);
@@ -53,12 +55,12 @@ public class DepositAccount extends Account {
 
     @Override
     public boolean requestLoan(double amount) {
-        if (amount < 0 || amount > 100000){
+        if (amount < 0 || amount > 100000) {
             return false;
         }
-        if (loan == null){
+        if (loan == null) {
             loan = new LoanAccount(getOwner(), amount);
-        }else {
+        } else {
             return loan.requestLoan(amount);
         }
         return true;
@@ -66,14 +68,10 @@ public class DepositAccount extends Account {
 
     @Override
     public boolean approveLoan() {
-        if (this.loan == null){
+        if (this.loan == null) {
             return false;
         }
         return loan.approveLoan();
     }
 
-    @Override
-    public double netAmount() {
-        return loan == null? getAmount(): getAmount()- loan.getAmount();
-    }
 }

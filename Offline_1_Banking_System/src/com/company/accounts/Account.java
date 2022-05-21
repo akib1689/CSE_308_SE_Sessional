@@ -52,6 +52,6 @@ public abstract class Account {
 
     public abstract boolean approveLoan();
 
-    public abstract double netAmount();
+    //public abstract double loanAmount();
 
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Bank {
     private final List<Customer> customers;
+    private double internalFund;
     private BaseUser loggedIn;
     private final ManagingDirector director;
     private final List<Officer> officers;
@@ -21,6 +22,7 @@ public class Bank {
         director = new ManagingDirector();
         officers = new ArrayList<>();
         cashiers = new ArrayList<>();
+        internalFund = 1000000;
         for (int i = 0; i < 2; i++) {
             Officer officer = new Officer();
             officers.add(officer);
@@ -70,7 +72,7 @@ public class Bank {
             System.out.println("You Don't Have the permission for this operation");
             return;
         }
-        ((Customer) loggedIn).deposit(amount);
+        internalFund += ((Customer) loggedIn).deposit(amount);
     }
 
     public void withdraw(double amount) {
@@ -79,7 +81,7 @@ public class Bank {
 
             return;
         }
-        ((Customer) loggedIn).withdraw(amount);
+        internalFund += ((Customer) loggedIn).withdraw(amount);
     }
 
     public void checkBalance() {

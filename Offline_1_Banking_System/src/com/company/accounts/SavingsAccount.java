@@ -68,8 +68,4 @@ public class SavingsAccount extends Account {
         return loan.approveLoan();
     }
 
-    @Override
-    public double netAmount() {
-        return loan == null? getAmount(): getAmount()- loan.getAmount();
-    }
 }

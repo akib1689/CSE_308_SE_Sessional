@@ -7,10 +7,6 @@ public class LoanAccount extends Account{
         this.approved = false;
     }
 
-    public void setApproved(boolean approved){
-        this.approved = approved;
-    }
-
     protected double getInterest(){
         return getAmount() * getRate();
     }
@@ -55,12 +51,11 @@ public class LoanAccount extends Account{
 
     @Override
     public boolean approveLoan() {
-        this.approved = true;
-        return true;
-    }
+        if (!approved) {
+            this.approved = true;
+            return true;
+        }
 
-    @Override
-    public double netAmount() {
-        return -getAmount();
+        return false;
     }
 }

@@ -16,11 +16,11 @@ public class ManagingDirector extends Officer{
     }
 
     public void seeFund(List<Account> accounts){
-        double initfund =  1000000;
+        /*double initfund =  1000000;
         for (Account account: accounts){
-            initfund += account.netAmount();
+            initfund += account.getLastTransaction();
         }
 
-        System.out.println("Total internal fund of the bank is: " + initfund);
+        System.out.println("Total internal fund of the bank is: " + initfund);*/
     }
 }
