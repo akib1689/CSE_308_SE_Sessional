@@ -17,10 +17,10 @@ public class DepositAccount extends Account {
     @Override
     public void addInterest() {
         if (loan == null) {
-            setAmount(getAmount() + getAmount() * getRate());
+            setAmount(getAmount() + getAmount() * getRate() - 500);
             return;
         }
-        setAmount(getAmount() + getAmount() * getRate() - loan.getInterest());
+        setAmount(getAmount() + getAmount() * getRate() - loan.getInterest() - 500);
         incrementAge();
     }
 
@@ -71,7 +71,9 @@ public class DepositAccount extends Account {
         if (this.loan == null) {
             return 0;
         }
-        return loan.approveLoan();
+        double val = loan.approveLoan();
+        setAmount(getAmount() + val);
+        return val;
     }
 
 }

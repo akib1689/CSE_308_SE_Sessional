@@ -81,7 +81,7 @@ public class Bank {
 
             return;
         }
-        internalFund += ((Customer) loggedIn).withdraw(amount);
+        internalFund -= ((Customer) loggedIn).withdraw(amount);
     }
 
     public void checkBalance() {

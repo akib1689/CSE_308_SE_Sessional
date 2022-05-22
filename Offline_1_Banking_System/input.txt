@@ -1,9 +1,10 @@
-create alice loan 1000
+create alice deposit 100000
+deposit 20000
 withdraw 12000
 query
 request 500
 close
-open d 5
+open o 1
 approve
 change student 7.5
 lookup alice
@@ -15,4 +16,5 @@ close
 inc
 open alice
 query
+withdraw 12000
 close

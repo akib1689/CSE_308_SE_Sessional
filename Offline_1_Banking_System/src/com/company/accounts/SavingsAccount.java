@@ -10,11 +10,11 @@ public class SavingsAccount extends Account {
 
     @Override
     public void addInterest() {
-        if (loan == null){
-            setAmount(getAmount() + getAmount()*getRate());
+        if (loan == null) {
+            setAmount(getAmount() + getAmount() * getRate() - 500);
             return;
         }
-        setAmount(getAmount() + getAmount()*getRate() - loan.getInterest());
+        setAmount(getAmount() + getAmount() * getRate() - loan.getInterest() - 500);
     }
 
     @Override
@@ -43,17 +43,17 @@ public class SavingsAccount extends Account {
             return false;
         }
         setAmount(getAmount() - amount);
-        return false;
+        return true;
     }
 
     @Override
     public boolean requestLoan(double amount) {
-        if (amount < 0 || amount > 10000){
+        if (amount < 0 || amount > 10000) {
             return false;
         }
-        if (loan == null){
+        if (loan == null) {
             loan = new LoanAccount(getOwner(), amount);
-        }else {
+        } else {
             return loan.requestLoan(amount);
         }
         return true;
@@ -62,10 +62,12 @@ public class SavingsAccount extends Account {
 
     @Override
     public double approveLoan() {
-        if (this.loan == null){
+        if (this.loan == null) {
             return 0;
         }
-        return loan.approveLoan();
+        double val = loan.approveLoan();
+        setAmount(getAmount() + val);
+        return val;
     }
 
 }
