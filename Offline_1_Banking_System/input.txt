@@ -1,4 +1,4 @@
-create alice deposit 100000
+create alice student 100000
 deposit 20000
 withdraw 12000
 query
