@@ -1,6 +1,8 @@
 package com.company.commodule;
-
-public class CellularModule extends ComModule {
+/*
+* concrete communication module class
+* */
+class CellularModule extends ComModule {
     public CellularModule() {
         super("Cellular Module", 300, 170);
     }

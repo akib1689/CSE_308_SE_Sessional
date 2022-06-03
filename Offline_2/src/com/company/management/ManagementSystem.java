@@ -5,7 +5,7 @@ import com.company.displaysystem.DisplaySystem;
 import com.company.displayunit.DisplayUnit;
 import com.company.driverapp.DriverApplication;
 
-public abstract class ManagementSystem {
+public class ManagementSystem {
     protected DisplayUnit displayUnit;
     protected ComModule comModule;
     protected DriverApplication driverApplication;
@@ -26,7 +26,13 @@ public abstract class ManagementSystem {
         displayUnit.display();
         comModule.displayInfo();
         System.out.println("Number of display units: " + displayUnitCount);
-        System.out.println("Driver application cost= " + driverApplication.getCost());
-        System.out.println("Total yearly cost= " + getTotalYearlyCost());
+        System.out.println("Driver application cost: " + driverApplication.getCost());
+        String str = displayUnitCount +
+                " * (" +displayUnit.getPrice() +
+                " + " + comModule.getPrice() +
+                " + " + comModule.getYearlyCost() +
+                ") + " + driverApplication.getCost() +
+                " = " + getTotalYearlyCost();
+        System.out.println("Total yearly cost: " + str);
     }
 }

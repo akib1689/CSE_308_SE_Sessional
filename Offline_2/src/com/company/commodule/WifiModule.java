@@ -1,6 +1,9 @@
 package com.company.commodule;
 
-public class WifiModule extends ComModule {
+/*
+* concrete communication module class]
+* */
+class WifiModule extends ComModule {
     public WifiModule() {
         super("Wifi Module", 500, 200);
     }

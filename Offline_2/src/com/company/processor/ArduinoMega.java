@@ -8,8 +8,8 @@ class ArduinoMega extends Processor {
 
     @Override
     public void displayInfo() {
-        System.out.println("Arduino Mega");
         System.out.println("Processor name: " + name);
         System.out.println("Processor speed: " + speed + " GHz");
+        System.out.println("Processor price: " + price + " $");
     }
 }

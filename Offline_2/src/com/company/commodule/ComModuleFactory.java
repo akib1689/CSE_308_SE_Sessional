@@ -3,8 +3,11 @@
  * All rights reserved
  */
 
-package com.company.commodule;
 
+package com.company.commodule;
+/*
+* factory class to get the communication module
+* */
 public class ComModuleFactory {
     public static ComModule getComModule(String comModuleType) {
         if (comModuleType == null) {

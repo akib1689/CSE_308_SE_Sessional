@@ -1,7 +1,7 @@
 package com.company;
 
 import com.company.management.ManagementSystem;
-import com.company.management.ManagementSystemFactory;
+import com.company.management.ManagementSystemBuilder;
 
 /*
 * Client class for the management system demo
@@ -12,25 +12,7 @@ public class Main {
 	// write your code here
         // take the input
         // create the object
-        ManagementSystem managementSystem = ManagementSystemFactory.getManagementSystem("Micro");
-        // call the method
-        if (managementSystem != null) {
-            managementSystem.displayInformation();
-        }
-        System.out.println("-----------------------------------------------------------------");
-        managementSystem = ManagementSystemFactory.getManagementSystem("Nano");
-        if (managementSystem != null) {
-            managementSystem.displayInformation();
-        }
-        System.out.println("-----------------------------------------------------------------");
-        managementSystem = ManagementSystemFactory.getManagementSystem("Pro");
-        if (managementSystem != null) {
-            managementSystem.displayInformation();
-        }
-        System.out.println("-----------------------------------------------------------------");
-        managementSystem = ManagementSystemFactory.getManagementSystem("Personal");
-        if (managementSystem != null) {
-            managementSystem.displayInformation();
-        }
+        ManagementSystem system = ManagementSystemBuilder.getManagementSystem("Deluxe","Wifi", 5);
+        system.displayInformation();
     }
 }

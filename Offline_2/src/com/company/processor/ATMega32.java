@@ -8,8 +8,8 @@ class ATMega32 extends Processor {
 
     @Override
     public void displayInfo() {
-System.out.println("ATMega32");
         System.out.println("Processor name: " + name);
         System.out.println("Processor speed: " + speed + " GHz");
+        System.out.println("Processor price: " + price + " $");
     }
 }
