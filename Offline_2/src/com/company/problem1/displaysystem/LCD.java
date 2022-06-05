@@ -7,8 +7,8 @@ class LCD extends DisplaySystem{
 
     @Override
     public void displayInfo() {
-        System.out.println("LCD");
-        System.out.println("Resolution: " + resolution);
-        System.out.println("Price: " + price);
+        System.out.print("\tLCD Display");
+        System.out.print("\tResolution: " + resolution);
+        System.out.println("\tPrice: " + price);
     }
 }

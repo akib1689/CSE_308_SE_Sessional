@@ -19,8 +19,4 @@ public abstract class DisplayUnit extends Part {
         this.processor = processor;
         this.display = display;
     }
-
-    public double getPrice() {
-        return price;
-    }
 }

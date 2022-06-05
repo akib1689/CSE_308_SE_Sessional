@@ -1,13 +1,12 @@
 package com.company.problem1.processor;
 
-public abstract class Processor {
-    protected String name;
-    protected double price;
+import com.company.problem1.Part;
+
+public abstract class Processor extends Part {
     protected double speed;
 
     public Processor(String name, double price, double speed) {
-        this.name = name;
-        this.price = price;
+        super(name, price);
         this.speed = speed;
     }
 
@@ -19,5 +18,11 @@ public abstract class Processor {
         return name;
     }
 
-    public abstract void displayInfo();
+    @Override
+    public void displayInfo() {
+        System.out.print("\tProcessor name: " + name);
+        System.out.print("\tProcessor speed: " + speed + " GHz");
+        System.out.println("\tProcessor price: " + price + " $");
+    }
+
 }

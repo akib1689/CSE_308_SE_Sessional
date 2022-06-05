@@ -6,15 +6,15 @@ public class DisplayUnitFactory {
     public static DisplayUnit getDisplayUnit(String type) {
         if (type.equalsIgnoreCase("Deluxe")) {
             DeluxeDisplayBuilder builder = new DeluxeDisplayBuilder();
-            DisplayUnitDecorator.construct(builder);
+            DisplayUnitDirector.construct(builder);
             return builder.getDisplayUnit();
         } else if (type.equalsIgnoreCase("Optimal")) {
             OptimalDisplayBuilder builder = new OptimalDisplayBuilder();
-            DisplayUnitDecorator.construct(builder);
+            DisplayUnitDirector.construct(builder);
             return builder.getDisplayUnit();
         } else if (type.equalsIgnoreCase("General")) {
             GeneralDisplayBuilder builder = new GeneralDisplayBuilder();
-            DisplayUnitDecorator.construct(builder);
+            DisplayUnitDirector.construct(builder);
             return builder.getDisplayUnit();
         } else {
             return null;

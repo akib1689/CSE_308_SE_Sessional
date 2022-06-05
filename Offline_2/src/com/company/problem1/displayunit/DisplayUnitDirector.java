@@ -5,7 +5,7 @@
 
 package com.company.problem1.displayunit;
 
-class DisplayUnitDecorator {
+class DisplayUnitDirector {
     static void construct(DisplayUnitBuilder displayUnitBuilder) {
         displayUnitBuilder.build();
     }

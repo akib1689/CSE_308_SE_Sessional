@@ -7,8 +7,8 @@ class LED extends DisplaySystem{
 
     @Override
     public void displayInfo() {
-        System.out.println("LED");
-        System.out.println("Resolution: " + resolution);
-        System.out.println("Price: " + price);
+        System.out.print("\tLED Display");
+        System.out.print("\tResolution: " + resolution);
+        System.out.println("\tPrice: " + price);
     }
 }
