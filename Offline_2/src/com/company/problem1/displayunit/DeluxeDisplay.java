@@ -8,7 +8,9 @@ import java.util.Objects;
 
 class DeluxeDisplay extends DisplayUnit {
     DeluxeDisplay() {
-        super("Deluxe", Objects.requireNonNull(ProcessorFactory.getProcessor("Raspberry Pi")), DisplaySystemFactory.createDisplaySystem("LCD"));
+        super("Deluxe",
+                Objects.requireNonNull(ProcessorFactory.getProcessor("Raspberry Pi")),
+                Objects.requireNonNull(DisplaySystemFactory.createDisplaySystem("LCD")));
     }
 
     @Override

@@ -8,7 +8,8 @@ import java.util.Objects;
 class OptimalDisplay extends DisplayUnit {
     OptimalDisplay() {
         super("Poor",
-                Objects.requireNonNull(ProcessorFactory.getProcessor("Arduino Mega")), DisplaySystemFactory.createDisplaySystem("LED"));
+                Objects.requireNonNull(ProcessorFactory.getProcessor("Arduino Mega")),
+                Objects.requireNonNull(DisplaySystemFactory.createDisplaySystem("LED")));
 
     }
 

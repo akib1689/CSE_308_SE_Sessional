@@ -5,11 +5,17 @@ package com.company.problem1.displayunit;
 public class DisplayUnitFactory {
     public static DisplayUnit getDisplayUnit(String type) {
         if (type.equalsIgnoreCase("Deluxe")) {
-            return new DeluxeDisplay();
+            DeluxeDisplayBuilder builder = new DeluxeDisplayBuilder();
+            DisplayUnitDecorator.construct(builder);
+            return builder.getDisplayUnit();
         } else if (type.equalsIgnoreCase("Optimal")) {
-            return new OptimalDisplay();
+            OptimalDisplayBuilder builder = new OptimalDisplayBuilder();
+            DisplayUnitDecorator.construct(builder);
+            return builder.getDisplayUnit();
         } else if (type.equalsIgnoreCase("General")) {
-            return new GeneralDisplay();
+            GeneralDisplayBuilder builder = new GeneralDisplayBuilder();
+            DisplayUnitDecorator.construct(builder);
+            return builder.getDisplayUnit();
         } else {
             return null;
         }

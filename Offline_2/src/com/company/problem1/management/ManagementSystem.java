@@ -22,7 +22,7 @@ public class ManagementSystem {
     }
 
     public void displayInformation(){
-        displayUnit.display();
+        displayUnit.displayInfo();
         comModule.displayInfo();
         System.out.println("Number of display units: " + displayUnitCount);
         System.out.println("Driver application cost: " + driverApplication.getCost());

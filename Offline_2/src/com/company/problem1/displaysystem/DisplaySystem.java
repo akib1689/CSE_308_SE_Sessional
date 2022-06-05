@@ -7,7 +7,7 @@ public abstract class DisplaySystem extends Part {
 
     public DisplaySystem(String name, String resolution, double price) {
         super(name, price);
-        this.price = price;
+        this.resolution = resolution;
     }
 
 

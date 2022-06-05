@@ -7,7 +7,9 @@ import java.util.Objects;
 
 class GeneralDisplay extends DisplayUnit {
     GeneralDisplay() {
-        super("Poor", Objects.requireNonNull(ProcessorFactory.getProcessor("ATMega32")), DisplaySystemFactory.createDisplaySystem("LED"));
+        super("Poor",
+                Objects.requireNonNull(ProcessorFactory.getProcessor("ATMega32")),
+                Objects.requireNonNull(DisplaySystemFactory.createDisplaySystem("LED")));
     }
 
     @Override

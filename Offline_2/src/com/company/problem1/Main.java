@@ -17,7 +17,7 @@ public class Main {
 	// write your code here
         // take the input
         // create the object of the management system
-        ManagementSystem system = ManagementSystemBuilder.getManagementSystem("Deluxe","Cellular", 5);
+        ManagementSystem system = ManagementSystemBuilder.getManagementSystem("general","Cellular", 5);
         system.displayInformation();
         System.out.println(system.getTotalYearlyCost());
     }
