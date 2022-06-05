@@ -1,5 +1,6 @@
 package com.company.problem1.displayunit;
 
+import com.company.problem1.Part;
 import com.company.problem1.displaysystem.DisplaySystem;
 import com.company.problem1.processor.Processor;
 
@@ -9,11 +10,12 @@ import com.company.problem1.processor.Processor;
 * one processor, options are: specified in the processor enumerator
 * one display, options are: specified in the display system enumerator
 * */
-public abstract class DisplayUnit {
+public abstract class DisplayUnit extends Part {
     protected Processor processor;
     protected DisplaySystem display;
     protected double price;
-    DisplayUnit(Processor processor, DisplaySystem display) {
+    DisplayUnit(String name, Processor processor, DisplaySystem display) {
+        super(name, processor.getPrice() + display.getPrice());
         this.processor = processor;
         this.display = display;
     }
@@ -21,7 +23,4 @@ public abstract class DisplayUnit {
     public double getPrice() {
         return price;
     }
-
-    // this method will be used to display the information about the display unit
-    public abstract void display();
 }

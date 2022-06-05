@@ -1,27 +1,18 @@
 package com.company.problem1.displaysystem;
 
-public abstract class DisplaySystem {
-    protected String name;
+import com.company.problem1.Part;
+
+public abstract class DisplaySystem extends Part {
     protected String resolution;
-    protected double price;
 
     public DisplaySystem(String name, String resolution, double price) {
-        this.name = name;
-        this.resolution = resolution;
+        super(name, price);
         this.price = price;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public String getResolution() {
         return resolution;
     }
 
-    public abstract void displayInfo();
 }

@@ -3,14 +3,17 @@ package com.company.problem1.displayunit;
 import com.company.problem1.displaysystem.DisplaySystemFactory;
 import com.company.problem1.processor.ProcessorFactory;
 
+import java.util.Objects;
+
 class OptimalDisplay extends DisplayUnit {
     OptimalDisplay() {
-        super(ProcessorFactory.getProcessor("Arduino Mega"), DisplaySystemFactory.createDisplaySystem("LED"));
-        price = processor.getPrice() + display.getPrice();
+        super("Poor",
+                Objects.requireNonNull(ProcessorFactory.getProcessor("Arduino Mega")), DisplaySystemFactory.createDisplaySystem("LED"));
+
     }
 
     @Override
-    public void display() {
+    public void displayInfo() {
         System.out.println("Optimal Display");
         System.out.println("Processor: ");
         processor.displayInfo();

@@ -3,6 +3,9 @@
  * All rights reserved
  */
 package com.company.problem1.commodule;
+
+import com.company.problem1.Part;
+
 /*
 * This is the abstract class that will represent the communication module and hold the information
 * about the communication module that is present in the machine
@@ -12,29 +15,16 @@ package com.company.problem1.commodule;
 * price -> initial price of the communication module
 * commission -> yearly cost of the communication module
 * */
-public abstract class ComModule {
-    protected String name;
-    protected double price;
+public abstract class ComModule extends Part {
     protected double yearly_cost;
 
     ComModule(String name, double price, double yearly_cost) {
-        this.name = name;
-        this.price = price;
+        super(name, price);
         this.yearly_cost = yearly_cost;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getPrice() {
-        return price;
     }
 
     public double getYearlyCost() {
         return yearly_cost;
     }
-
-    public abstract void displayInfo();
 
 }

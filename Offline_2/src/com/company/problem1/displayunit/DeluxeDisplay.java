@@ -4,14 +4,15 @@ package com.company.problem1.displayunit;
 import com.company.problem1.displaysystem.DisplaySystemFactory;
 import com.company.problem1.processor.ProcessorFactory;
 
+import java.util.Objects;
+
 class DeluxeDisplay extends DisplayUnit {
     DeluxeDisplay() {
-        super(ProcessorFactory.getProcessor("Raspberry Pi"), DisplaySystemFactory.createDisplaySystem("LCD"));
-        price = processor.getPrice() + display.getPrice();
+        super("Deluxe", Objects.requireNonNull(ProcessorFactory.getProcessor("Raspberry Pi")), DisplaySystemFactory.createDisplaySystem("LCD"));
     }
 
     @Override
-    public void display() {
+    public void displayInfo() {
         System.out.println("Deluxe Display");
         System.out.println("Processor: ");
         processor.displayInfo();
