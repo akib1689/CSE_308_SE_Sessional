@@ -22,8 +22,9 @@ public class Main {
         system.displayInformation();
         System.out.println(system.getTotalYearlyCost());*/
         ManagementSystemBuilder builder = new ManagementSystemBuilder();
-        ManagementSystemDirector.construct(builder,"optimal","Cellular",5);
+        ManagementSystemDirector.construct(builder,"deluxe","wifi",5);
         ManagementSystem system = builder.getManagementSystem();
         system.displayInformation();
+
     }
 }
