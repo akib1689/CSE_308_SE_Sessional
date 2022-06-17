@@ -8,6 +8,6 @@ public abstract class Drink extends Food {
     }
 
     public void print() {
-        System.out.println("Drink: " + name + "\t\t\t\t\t" + price + " $");
+        System.out.println("Drink: " + name + ": " + price + " $");
     }
 }

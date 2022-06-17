@@ -30,11 +30,12 @@ public abstract class Burger extends Food {
      */
     public void addTopping(Toppings topping) {
         toppings.add(topping);
+        price += topping.getPrice();
     }
 
     @Override
     public void print() {
-        System.out.println("Burger: " + name + "\t\t\t\t\t" + price + "$");
+        System.out.println("Burger: " + name + ": " + price + "$");
         for (Toppings topping : toppings) {
             topping.print();
         }

@@ -9,5 +9,13 @@ public abstract class Food {
         this.price = price;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
     public abstract void  print();
 }

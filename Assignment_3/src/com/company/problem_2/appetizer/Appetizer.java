@@ -9,6 +9,6 @@ public abstract class Appetizer extends Food {
 
     @Override
     public void print(){
-        System.out.println("Appetizer: " + name + "\t\t\t\t" + price + "$");
+        System.out.println("Appetizer: " + name + ": " + price + "$");
     }
 }

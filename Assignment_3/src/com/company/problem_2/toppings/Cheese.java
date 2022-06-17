@@ -7,6 +7,6 @@ public class Cheese extends Toppings {
 
     @Override
     public void print() {
-        System.out.println("\t\tCheese\t\t\t\t\t\t"+price);
+        System.out.println("\t\tCheese: "+price);
     }
 }
